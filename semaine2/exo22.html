@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <head>
+      <meta charset="UTF-8" />
+      <title>Exo22</title>
+    </head>
+    <form>
+      <fieldset>
+        <legend>formulaire</legend>
+        <div>
+          <label> <b>Login:</b> </label>
+          <input type="email" placeholder="saisir votre login"  required/>
+        </div>
+
+        <div>
+          <label><b>Mot pass:</b></label>
+          <input
+            type="password"
+            placeholder="saisir votre mot de pass"
+          /><br /><br />
+        </div>
+
+        <button type="submit">Envoyer</button>
+      </fieldset>
+    </form>
+    <br>
+    <form>
+        <fieldset>
+          <legend>formulaire</legend>
+          <div>
+            <label> <b>Login:</b> </label>
+            <input type="text" placeholder="saisir votre login" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required />
+          </div>
+          <div>
+            <label><b>Mot pass:</b></label>
+            <input
+              type="password"
+              placeholder="saisir votre mot de pass"
+            /><br /><br />
+          </div>
+          <button type="submit">Envoyer</button>
+        </fieldset>
+      </form>
+  </body>
+</html>
+
+
+
