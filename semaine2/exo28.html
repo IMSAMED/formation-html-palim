@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exo28</title>
+    <style>
+    
+ol {counter-reset: repas;} 
+li {
+	list-style-type: none;
+	counter-increment: repas; /*  compteur  */
+	margin-bottom: 10px;
+}
+li:before {
+	content: counter(repas); /* on affiche le compteur */
+	padding: 0 6px 1px;
+	margin-right: 8px;
+	background: rgb(0, 128, 255);
+	border-radius: 60px;
+	font-weight: bold;
+	font-size: 18px;
+	color: white;		
+}
+    </style>
+  </head>
+  <body>
+    <ol>
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+        <li>Item4</li>
+      </ol>
+  </body>
+</html>
