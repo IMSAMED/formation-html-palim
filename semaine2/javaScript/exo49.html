@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chronomètre</title>
+    <meta charset="utf-8" />
+    <script
+      type="text/javascript"
+      language="javascript"
+      language="javascript"
+      var spans = document.getElementsByTagName('span');
+var btn_start = document.getElementById('start');
+var btn_stop = document.getElementById('stop');
+var h=0, mn=0,s=0,ms=0;
+var timer ;
+console.log(spans);
+function start(){
+    timer = setInterval(update_chrono,100)
+    btn_start.disabled = true;
+}
+
+function update_chrono(){
+    console.log('update_chrono');
+    ms+=1;
+    if(ms==10){
+        ms=1;
+        s+=1
+    }
+
+    if(s==60){
+        s=1;
+        mn+=1
+    }
+    if(mn==60){
+        mn=1;
+        h+=1
+    }
+    
+    spans[0].innerHTML = h + " h";
+    spans[1].innerHTML = mn + " min";
+    spans[2].innerHTML = s + " s";
+    spans[3].innerHTML = ms + " ms";
+}
+
+function stop(){
+    clearInterval(timer);
+    btn_start.disabled = false;
+}
+
+function reset(){
+h=0, mn=0,s=0,ms=0;
+spans[0].innerHTML = h + " h";
+spans[1].innerHTML = mn + " min";
+spans[2].innerHTML = s + " s";
+spans[3].innerHTML = ms + " ms";
+}
+
+    ></script>
+    <style type="text/css">
+      .chronometre {
+        margin: auto;
+        width: 300px;
+        text-align: center;
+      }
+      .tim {
+        margin: auto;
+        width: 300px;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        padding: 5px 0;
+        text-align: center;
+        font-size: 1.5em;
+        font-family: digital;
+        margin-bottom: 10px;
+      }
+
+      button {
+        background: #3498db;
+        color: #fff;
+        width: 70px;
+        border-radius: 5px;
+        line-height: 1.5em;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chronometre">
+      <div class="tim">
+        <span>6 h</span> : <span>11 min</span> : <span>13 s</span> :
+        <span>5 ms</span>
+      </div>
+      <button id="start" onclick="start()">Start</button>
+      <button id="stop" onclick="stop()">Stop</button>
+      <button id="reset" onclick="reset()">Reset</button>
+    </div>
+
+  </body>
+</html>

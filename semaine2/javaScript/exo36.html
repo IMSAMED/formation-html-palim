@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <script>
+        function imprimer(divName) {
+              var printContents = document.getElementById(divName).innerHTML;    
+           var originalContents = document.body.innerHTML;      
+           document.body.innerHTML = printContents;     
+           window.print();     
+           document.body.innerHTML = originalContents;
+           }
+    </script>
+  </head>
+  <body>
+    <div id='sectionAimprimer'>
+      <h1>
+        Le Covid-19, une menace à la paix et la sécurité internationales ?
+      </h1>
+      <p>
+        Le virus Corona a laissé l'humanité désarmée et impuissante à y faire
+        face. Les Etats y ont réagi en rangs dispersés, sans aucune
+        coordination, et les Organisations internationales se sont limitées à
+        alerter les Etats et à les inciter à prendre les mesures nécessaires
+        pour faire face à la pandémie. Si le Secrétaire général de l’ONU a été
+        parmi les premiers à “déclarer la guerre” a ce virus, le Conseil de
+        Sécurité a brillé par son absence, alors qu’auparavant, il avait adopté
+        des résolutions qualifiant le VIH et Ebola de menaces à la paix et à la
+        sécurité internationales. Cette crise rappelle la nécessité de mettre en
+        place un dispositif mondial de riposte aux crises en matière de santé
+        globale.
+      </p>
+    </div>
+    <button onClick="imprimer('sectionAimprimer')">Imprimer</button>
+  </body>
+</html>

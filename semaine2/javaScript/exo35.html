@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exo35 -- proposition med amine</title>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      var d = new Date();
+      var day = d.getDay();
+      var jours = [
+        "Dimanche",
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendredi",
+        "Samedi",
+      ];
+      document.write("Output :" + "<BR>");
+      document.write("Today is :" + jours[d.getDay()] + "<BR>");
+
+      var hour = d.getHours();
+      var minute = d.getMinutes();
+      var second = d.getSeconds();
+      var typeHour = hour >= 12 ? " PM " : " AM ";
+      hour = hour >= 12 ? hour - 12 : hour;
+
+      document.write(
+        "Current time is : " + hour + typeHour + " : " + minute + " : " + second
+      );
+
+  
+    </script>
+
+
+  </body>
+</html>
