@@ -9,13 +9,6 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css" />
     <style>
       table,
       th,
@@ -37,23 +30,7 @@
         transform: perspective(-50%) translateY(-50%);
       }
       body {
-        background: rgb(131, 58, 180);
-        background: -moz-linear-gradient(
-          90deg,
-          rgba(131, 58, 180, 1) 0%,
-          rgba(253, 29, 29, 1) 50%
-        );
-        background: -webkit-linear-gradient(
-          90deg,
-          rgba(131, 58, 180, 1) 0%,
-          rgba(253, 29, 29, 1) 50%
-        );
-        background: linear-gradient(
-          90deg,
-          rgba(131, 58, 180, 1) 0%,
-          rgba(253, 29, 29, 1) 50%
-        );
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833ab4",endColorstr="#fd1d1d",GradientType=1);
+        background: linear-gradient(to bottom, #ff0066 0%, #cc00ff 100%);
       }
     </style>
   </head>
@@ -64,55 +41,60 @@
         <table class="calculator-buttons">
           <tr>
             <td>
-              <input type="button" class="btn btn-secondary" value="C" />
+              <input type="button" class="btn btn-secondary" value="C" onclick="c()" />
             </td>
             <td>
-              <input type="button" class="btn btn-secondary" value="<" />
+              <input type="button" class="btn btn-secondary" value="<" onclick="supp()"/>
             </td>
             <td>
-              <input type="button" class="btn btn-secondary" value="/" />
+              <input type="button" class="btn btn-secondary" value="/" onclick="enter('/')" />
             </td>
             <td>
-              <input type="button" class="btn btn-secondary" value=" x " />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <input type="button" class="btn btn-secondary" value="7" />
-            </td>
-            <td>
-              <input type="button" class="btn btn-secondary" value="8" />
-            </td>
-            <td>
-              <input type="button" class="btn btn-secondary" value="9" />
-            </td>
-            <td>
-              <input type="button" class="btn btn-secondary" value=" - " />
+              <input type="button" class="btn btn-secondary" value=" x " onclick="enter('x')"/>
             </td>
           </tr>
           <tr>
             <td>
-              <input type="button" class="btn btn-secondary" value="4" />
+              <input type="button" class="btn btn-secondary" value="7" onclick="enter(7)"/>
             </td>
             <td>
-              <input type="button" class="btn btn-secondary" value="5" />
+              <input type="button" class="btn btn-secondary" value="8" onclick="enter(8)"/>
             </td>
             <td>
-              <input type="button" class="btn btn-secondary" value="6" />
+              <input type="button" class="btn btn-secondary" value="9" onclick="enter(9)"/>
             </td>
             <td>
-              <input type="button" class="btn btn-secondary" value=" +" />
+              <input type="button" class="btn btn-secondary" value=" - " onclick="enter('-')"/>
             </td>
           </tr>
           <tr>
             <td>
-              <input type="button" class="btn btn-secondary" value="1" />
+              <input type="button" class="btn btn-secondary" value="4" onclick="enter(4)"/>
             </td>
             <td>
-              <input type="button" class="btn btn-secondary" value="2" />
+              <input type="button" class="btn btn-secondary" value="5" onclick="enter(5)" />
             </td>
             <td>
-              <input type="button" class="btn btn-secondary" value="3" />
+              <input type="button" class="btn btn-secondary" value="6" onclick="enter(6)"/>
+            </td>
+            <td>
+              <input type="button" class="btn btn-secondary" value=" +" onclick="enter('+')" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input
+                type="button"
+                class="btn btn-secondary"
+                value="1"
+                onclick="enter(1)"
+              />
+            </td>
+            <td>
+              <input type="button" class="btn btn-secondary" value="2" onclick="enter(2)"/>
+            </td>
+            <td>
+              <input type="button" class="btn btn-secondary" value="3" onclick="enter(3)" />
             </td>
             <td rowspan="2">
               <input
@@ -120,6 +102,7 @@
                 class="btn btn-secondary"
                 style="padding: 30px 15px;"
                 value="="
+                onclick="res()"
               />
             </td>
           </tr>
@@ -130,14 +113,41 @@
                 class="btn btn-secondary"
                 style="padding: 6px 35px;"
                 value="0"
+                onclick="enter(0)"
               />
             </td>
             <td>
-              <input type="button" class="btn btn-secondary" value="." />
+              <input type="button" class="btn btn-secondary" value="." onclick="enter('.')"/>
             </td>
           </tr>
         </table>
       </form>
     </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function enter(num) {
+        $('.calculatorOutput').val($('.calculatorOutput').val() + num);
+      }
+      function res() {
+        $('.calculatorOutput').val(eval($('.calculatorOutput').val()));
+      }
+      function c() {
+        $('.calculatorOutput').val('');
+      }
+      function supp() {
+        valueInOutput =$('.calculatorOutput').val();
+        $('.calculatorOutput').val(valueInOutput.substring(0, valueInOutput.length - 1));
+
+      }
+    </script>
   </body>
 </html>
