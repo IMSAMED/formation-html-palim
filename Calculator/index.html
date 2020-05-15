@@ -30,14 +30,14 @@
         transform: perspective(-50%) translateY(-50%);
       }
       body {
-        background: linear-gradient(to bottom, #ff0066 0%, #cc00ff 100%);
-      }
+        background:#e66465;
+       }
     </style>
   </head>
   <body>
     <div class="calculator">
       <form>
-        <input type="text" class="calculatorOutput" />
+        <input type="text" class="calculatorOutput"  />
         <table class="calculator-buttons">
           <tr>
             <td>
@@ -50,7 +50,7 @@
               <input type="button" class="btn btn-secondary" value="/" onclick="enter('/')" />
             </td>
             <td>
-              <input type="button" class="btn btn-secondary" value=" x " onclick="enter('x')"/>
+              <input type="button" class="btn btn-secondary" value=" x " onclick="enter('*')"/>
             </td>
           </tr>
           <tr>
@@ -146,7 +146,6 @@
       function supp() {
         valueInOutput =$('.calculatorOutput').val();
         $('.calculatorOutput').val(valueInOutput.substring(0, valueInOutput.length - 1));
-
       }
     </script>
   </body>
