@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="menu"></div>
+    </body>
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    $.each(
+      { Tintin: 4, Milou: 2, Castafiore: 1, Haddock: 3, Tournesol: 5 },
+      function (k, v) {
+        let item = ("<ul>" + k + "," + v + "</ul>");
+        $(".menu").append(item);
+      }
+    );
+</script>
+</html>
