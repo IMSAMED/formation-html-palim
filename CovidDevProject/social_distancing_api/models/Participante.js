@@ -45,7 +45,6 @@ ParticipanteSchema.pre('save', async function(){
 
     //do not save address taping by user in bd
     this.address = undefined;
-    next();
 });
 
 module.exports = mongoose.model('Paticipante', ParticipanteSchema);

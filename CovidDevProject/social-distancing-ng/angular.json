@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "social-distancing": {
+    "social-distancing-ng": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/social-distancing",
+            "outputPath": "dist/social-distancing-ng",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,6 +24,8 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "../node_modules/font-awesome/css/font-awesome.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -62,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "social-distancing:build"
+            "browserTarget": "social-distancing-ng:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "social-distancing:build:production"
+              "browserTarget": "social-distancing-ng:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "social-distancing:build"
+            "browserTarget": "social-distancing-ng:build"
           }
         },
         "test": {
@@ -110,18 +112,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "social-distancing:serve"
+            "devServerTarget": "social-distancing-ng:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "social-distancing:serve:production"
+              "devServerTarget": "social-distancing-ng:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "social-distancing",
+  "defaultProject": "social-distancing-ng",
   "cli": {
     "analytics": false
   }
