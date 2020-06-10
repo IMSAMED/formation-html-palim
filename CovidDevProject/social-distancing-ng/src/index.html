@@ -1,13 +1,172 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>SocialDistancingNg</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+<!-- <app-root> </app-root>
+        <div class="line"></div>-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>9riiiiib Map</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Font Awesome JS -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+      crossorigin="anonymous"
+    ></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar Holder -->
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3>Bootstrap Sidebar</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+          <p>Dummy Heading</p>
+          <li class="active">
+            <a
+              href="#homeSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Home</a
+            >
+            <ul class="collapse list-unstyled" id="homeSubmenu">
+              <li>
+                <a href="#">Home 1</a>
+              </li>
+              <li>
+                <a href="#">Home 2</a>
+              </li>
+              <li>
+                <a href="#">Home 3</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">About</a>
+            <a
+              href="#pageSubmenu"
+              data-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              >Pages</a
+            >
+            <ul class="collapse list-unstyled" id="pageSubmenu">
+              <li>
+                <a href="#">Page 1</a>
+              </li>
+              <li>
+                <a href="#">Page 2</a>
+              </li>
+              <li>
+                <a href="#">Page 3</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Portfolio</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+          <li>
+            <a
+              class="social-icon"
+              href="https://www.linkedin.com/in/SamedLaqtib"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-facebook-messenger"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Page Content Holder -->
+      <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="navbar-btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <!-- Search form -->
+            <form>
+              <div class="searchbar">
+                <input
+                  class="search_input"
+                  type="text"
+                  name=""
+                  placeholder="Search..."
+                />
+                <a href="#" class="search_icon"
+                  ><i class="fas fa-search"></i
+                ></a>
+              </div>
+            </form>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto social-icons">
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      <app-root class="map" ></app-root>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- script sidebar -->
+    <script src="assets/js/script.js"></script>
+  </body>
 </html>
